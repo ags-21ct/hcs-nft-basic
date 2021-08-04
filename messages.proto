@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package proto;
+
+option java_multiple_files = true;
+
+
+message Transfer {
+	string from = 1;
+	string to = 2;
+	int32 tokenid = 3;
+}
+
+message BatchTransfer {
+  string toAddress = 1;
+  uint64 amount = 2;
+}
+
+message Join {
+	string address = 1;
+	string username = 2;
+}
+
+message InitGTC {
+	string name = 1;
+	string symbol = 2;	
+	string owner = 3;
+}
+
+message Approve {
+	string to = 1;
+	int32 tokenid = 2;
+}
+
+message UpdateRate {
+	string rate = 1;
+	string date = 2;
+}
+
+message SetApprovalForAll {
+	string operator = 1;
+	bool approved = 2;
+}
+
+message AdminTransfer {
+	string from = 1;
+	string to = 2;
+	uint64 tokenId = 3;
+}
+
+message AdminBatchTransfer {
+	string fromAddress = 1;
+	string toAddress = 2;
+	uint64 amount = 3;
+}
+
+message Mint {
+	string to = 1;
+	int32 amount = 2;
+	string address = 3;
+}
+
+message Burn {
+	string from = 1;
+	int32 amount = 2;
+}
+
+message PrimitiveHeader {
+  bytes signature = 1;
+  string publicKey = 2;
+  uint64 random = 3;
+}
+
+message Primitive {
+  PrimitiveHeader header = 1;
+
+  oneof primitive {
+ 	UpdateRate updateRate = 10;
+    InitGTC initGTC = 11;
+    Approve approve = 12;
+    SetApprovalForAll setApprovalForAll = 13;
+    Mint mint = 14;
+    Burn burn = 15;
+    Join join = 16;
+    Transfer transfer = 17;
+    BatchTransfer batchTransfer = 18;
+    AdminTransfer adminTransfer = 19;
+    AdminBatchTransfer adminBatchTransfer = 20;
+    
+  }
+}

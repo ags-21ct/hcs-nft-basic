@@ -1,0 +1,28 @@
+{
+  "name": "GTCNFT",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hashgraph/sdk": "^2.0.23",
+    "assert": "^2.0.0",
+    "body-parse": "^0.1.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.2.6",
+    "firebase-admin": "^9.9.0",
+    "google-protobuf": "^3.17.2",
+    "mongodb": "^3.6.9",
+    "mysql": "^2.18.1",
+    "request": "^2.88.2",
+    "tweetnacl": "^1.0.3",
+    "twilio": "^3.63.1",
+    "ws": "^7.4.6"
+  }
+}
